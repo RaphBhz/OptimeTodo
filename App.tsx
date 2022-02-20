@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Locked from "./components/pages/Locked";
+import Dev from "./components/pages/Dev";
+import AndroidFonts from "./components/react-native-fonts-master/AndroidFonts";
+import IosFonts from "./components/react-native-fonts-master/IosFonts";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto"/>
-    </View>
-  );
+//see dev.tsx pour la navigation typescript
+export type RootStackParams = {
+	Dev: undefined;
+	Locked: undefined;
+	Ios: undefined;
+	Android: undefined;
+};
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+	return (
+		<NavigationContainer>
+			<Stack.Navigator initialRouteName="Dev">
+				<Stack.Screen name="Dev" component={Dev} />
+				<Stack.Screen name="Locked" component={Locked} />
+				<Stack.Screen name="Ios" component={IosFonts} />
+				<Stack.Screen name="Android" component={AndroidFonts} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
