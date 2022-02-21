@@ -18,19 +18,19 @@ const Locked = (props: Props) =>{
       <ModalUI title='Login' setVisibility={setLoginModalState} visible={loginModalOpen}>
         <UserInput title="Username"/>
         <UserInput title="Password" secureText={true}/>
-        <SubmitButton title='Login' event={() => setLoginModalState(false)} customStyle={{marginTop: 50}}/>
+        <SubmitButton title='Login' event={() => setLoginModalState(false)}/>
       </ModalUI>
       
       <ModalUI title='Register' setVisibility={setRegisterModalState} visible={RegisterModalOpen}>
         <UserInput title="Username"/>
         <UserInput title="Password" secureText={true}/>
         <UserInput title="Confirm password" secureText={true}/>
-        <SubmitButton title='Login' event={() => setRegisterModalState(false)} customStyle={{marginTop: 30}}/>
+        <SubmitButton title='Login' event={() => setRegisterModalState(false)}/>
       </ModalUI>
 
       <Image
         style={styles.logo}
-        source={require('../../assets/icon.png')}
+        source={require('../../assets/pencil.png')}
       />
       <Text style={styles.appName}>TouDou</Text>
       <Text style={styles.slogan}>Your personal {"\n"} note taker</Text>
@@ -49,8 +49,8 @@ export default Locked;
 
 const styles = StyleSheet.create({
   logo: {
-    height: 212,
-    width: 212,
+    height: 150,
+    width: 150,
   },
   appName: {
     textAlign: 'center',
@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
     textDecorationLine: 'underline',
     color: '#202020',
-    fontSize: 40
+    fontSize: 40,
+    marginTop: 15
   },
   slogan: {
     textAlign: 'center',
@@ -67,41 +68,14 @@ const styles = StyleSheet.create({
     color: '#666666',
     fontSize: 30,
     marginTop: 20,
-    marginBottom: 100
   },
   paragraph: {
     textAlign: 'center',
-    marginTop: 30,
+    marginTop: 10,
     marginBottom: 5,
     fontStyle: 'normal',
     fontWeight: '400',
     color: '#666666',
     fontSize: 20,
   },
-  centeredModal:{
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 90,
-    backgroundColor: 'rgba(0, 0, 0, 0.74)'
-  },
-  modalView:{
-    alignItems: "center",
-    borderRadius: 15,
-    backgroundColor: '#F4F2E8',
-    padding: 20,
-    width: '80%',
-    height: '50%'
-  },
-  modalHeader:{
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    width: '100%',
-    marginBottom: 30
-  },
-  textHeader:{
-    fontWeight: '200',
-    color: '#666666',
-    fontSize: 20,
-  }
 });

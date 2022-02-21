@@ -21,7 +21,7 @@ function App() {
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName="Dev">
 				<Stack.Screen name="Dev" component={Dev} />
-				<Stack.Screen name="Locked" component={Locked} />
+				<Stack.Screen name="Locked" component={Locked} options={{headerShown: false}}/>
 				<Stack.Screen name="Ios" component={IosFonts} />
 				<Stack.Screen name="Android" component={AndroidFonts} />
 			</Stack.Navigator>

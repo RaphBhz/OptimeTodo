@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 90,
         backgroundColor: 'rgba(0, 0, 0, 0.74)'
     },
     modalView:{
@@ -42,13 +41,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#F4F2E8',
         padding: 20,
         width: '80%',
-        height: '50%'
     },
     modalHeader:{
         justifyContent: 'space-between',
         flexDirection: 'row',
         width: '100%',
-        marginBottom: 30
+        marginBottom: 15
     },
     textHeader:{
         fontWeight: '200',
