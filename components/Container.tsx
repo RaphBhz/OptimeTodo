@@ -1,13 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 import React from "react";
 
 type Props = {
     children?: JSX.Element|JSX.Element[];
+    customStyle?: StyleProp<ViewStyle>;
 };
 
 const Container = (props: Props) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, props.customStyle]}>
       {props.children}
     </View>
   );
@@ -20,6 +21,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F4F2E8',
         flex: 1, 
         alignItems: 'center',
-        justifyContent: 'center', 
+        paddingVertical: '15%'
     }
 });

@@ -13,7 +13,7 @@ const Locked = (props: Props) =>{
 
 
   return(
-    <Container>
+    <Container customStyle={{ justifyContent: 'center' }}>
 
       <ModalUI title='Login' setVisibility={setLoginModalState} visible={loginModalOpen}>
         <UserInput title="Username"/>
