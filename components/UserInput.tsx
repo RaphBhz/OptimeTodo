@@ -3,6 +3,7 @@ import React, {useState} from "react";
 
 type Props = {
   title: string;
+  onChange: () => void;
   secureText?: boolean;
 };
 
@@ -13,6 +14,7 @@ const UserInput = (props: Props) => {
         placeholder={props.title}
         placeholderTextColor='#a3a3a3'
         secureTextEntry={props.secureText}
+        onChange={props.onChange}
       />
       
   );

@@ -1,31 +1,48 @@
 import React, {useState}from 'react';
-import { Image, View, Text, StyleSheet, Button, Modal, Pressable, TextInput} from 'react-native';
+import { Image, View, Text, StyleSheet, Button, Modal, Pressable, TextInput, Alert} from 'react-native';
 import Container from '../Container';
 import ModalUI from '../ModalUI';
 import SubmitButton from '../SubmitButton';
 import UserInput from '../UserInput';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+
+function connection() {
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+}
 
 type Props = {};
 
 const Locked = (props: Props) =>{
   const [loginModalOpen, setLoginModalState] = useState(false);
   const [RegisterModalOpen, setRegisterModalState] = useState(false);
-
+  const [loginUsername, onChangeLoginUsername] = useState("");
+  const [registerUsername, onChangeRegisterUsername] = useState("");
 
   return(
     <Container>
 
       <ModalUI title='Login' setVisibility={setLoginModalState} visible={loginModalOpen}>
-        <UserInput title="Username"/>
-        <UserInput title="Password" secureText={true}/>
-        <SubmitButton title='Login' event={() => setLoginModalState(false)}/>
+        <UserInput title="Username" onChange={() => onChangeLoginUsername}/>
+        <UserInput title="Password" secureText={true} onChange={() => onChangeLoginUsername}/>
+        <SubmitButton title='Login' event={() => Alert.alert(loginUsername)}/>
       </ModalUI>
       
       <ModalUI title='Register' setVisibility={setRegisterModalState} visible={RegisterModalOpen}>
-        <UserInput title="Username"/>
-        <UserInput title="Password" secureText={true}/>
-        <UserInput title="Confirm password" secureText={true}/>
-        <SubmitButton title='Login' event={() => setRegisterModalState(false)}/>
+        <UserInput title="Username" onChange={() => onChangeLoginUsername}/>
+        <UserInput title="Password" secureText={true} onChange={() => onChangeLoginUsername}/>
+        <UserInput title="Confirm password" secureText={true} onChange={() => onChangeLoginUsername}/>
+        <SubmitButton title='Register' event={() => setRegisterModalState(false)}/>
       </ModalUI>
 
       <Image
