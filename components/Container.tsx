@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#F4F2E8',
       flex: 1,
       alignItems: 'center',
-      paddingVertical: '15%'
+      paddingTop: '15%',
+      paddingBottom: '5%'
     }
 });

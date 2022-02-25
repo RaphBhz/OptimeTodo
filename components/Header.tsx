@@ -19,19 +19,25 @@ export default Header
 
 const styles = StyleSheet.create({
     header: {
-        position: 'absolute',
-        top: 50,
-        left: 0,
-        right: 0,
+        width: '95%',
         zIndex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 20,
         height: 70,
-        margin: 10,
+        marginBottom: 0,
         backgroundColor: '#FBCA6B',
         borderRadius: 15,
+        shadowColor: '#666666',
+        shadowRadius: 20,
+        shadowOpacity: 1,
+        shadowOffset: {
+            height: 10,
+            width: 10
+        },
+        textShadowRadius: 20
+    },
     title: {
         fontFamily: 'RobotoMono_400Regular',
         color: '#fff',
@@ -41,6 +47,6 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 25,
-        backgroundColor: '#F4F2E8'
+        backgroundColor: '#F4F2E8',
     }
 })
