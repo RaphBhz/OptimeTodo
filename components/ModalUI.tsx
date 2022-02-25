@@ -38,15 +38,15 @@ const styles = StyleSheet.create({
     modalView:{
         alignItems: "center",
         borderRadius: 15,
-        backgroundColor: '#F4F2E8',
-        padding: 20,
         width: '80%',
+        backgroundColor: '#F4F2E8',
+        paddingHorizontal: 30
     },
     modalHeader:{
         justifyContent: 'space-between',
         flexDirection: 'row',
         width: '100%',
-        marginBottom: 15
+        marginTop: 15
     },
     textHeader:{
         fontWeight: '200',
