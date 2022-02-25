@@ -19,14 +19,17 @@ export default Header
 
 const styles = StyleSheet.create({
     header: {
-        display: 'flex',
+        position: 'absolute',
+        top: 50,
+        left: 0,
+        right: 0,
+        zIndex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 20,
-        width: '90%',
         height: 70,
-        marginHorizontal: 'auto',
+        margin: 10,
         backgroundColor: '#FBCA6B',
         borderRadius: 15,
     },

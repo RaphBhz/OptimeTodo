@@ -18,9 +18,9 @@ export default Container;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#F4F2E8',
-        flex: 1, 
-        alignItems: 'center',
-        paddingVertical: '15%'
+      backgroundColor: '#F4F2E8',
+      flex: 1,
+      alignItems: 'center',
+      paddingVertical: '15%'
     }
 });
