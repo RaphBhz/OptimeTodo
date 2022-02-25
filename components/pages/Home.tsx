@@ -6,8 +6,7 @@ import CardNote from '../CardNote'
 
 type Props = {}
 
-const Home = ({
- } : any, props: Props) =>  {
+const Home = ({navigation} : any, props: Props) =>  {
     return (
 
     <Container>
