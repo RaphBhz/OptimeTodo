@@ -5,12 +5,12 @@ import Header from '../Header'
 
 type Props = {}
 
-const Home = (props: Props) => {
+const Home = ({ navigation } : any, props: Props) =>  {
     return (
 
     <Container>
         <Header title="Your notes" event={() => {
-            
+            navigation.navigate('Dev')
         }}/>
         <Text>Home</Text>
     </Container>
