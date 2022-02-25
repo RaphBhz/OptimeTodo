@@ -9,7 +9,7 @@ type Props = {
 const Header = (props: Props) => {
   return (
     <View style={styles.header}>
-        <Text>{props.title}</Text>
+        <Text style={styles.title}>{props.title}</Text>
         <Pressable style={styles.button} onPress={props.event}></Pressable>
     </View>
   )
@@ -32,6 +32,10 @@ const styles = StyleSheet.create({
         margin: 10,
         backgroundColor: '#FBCA6B',
         borderRadius: 15,
+    title: {
+        fontFamily: 'RobotoMono_400Regular',
+        color: '#fff',
+        fontSize: 20,
     },
     button: {
         width: 50,
