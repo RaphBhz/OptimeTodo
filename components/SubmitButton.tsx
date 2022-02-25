@@ -10,11 +10,11 @@ type Props = {
 const SubmitButton = (props: Props) => {
     return(
         <Pressable 
-            style={({pressed}) =>StyleSheet.flatten([
-                StyleSheet.flatten([
-                    {backgroundColor: pressed ? "#FFD78A" : "#FBCA6B"}, styles.button
-                ]), props.customStyle
-            ])} 
+            style={({pressed}) =>[
+                {backgroundColor: pressed ? "#FFD78A" : "#FBCA6B"},
+                styles.button,
+                props.customStyle
+            ]} 
             onPress={props.event}>
             <Text style={styles.title}>{props.title}</Text>
         </Pressable>
