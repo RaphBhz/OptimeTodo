@@ -1,12 +1,9 @@
 import React, {useState} from 'react';
 import { View, Text, Button } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParams } from '../../App';
 import ModalUI from '../ModalUI';
 
-function Dev() {
-    const navigation = useNavigation<NativeStackNavigationProp<RootStackParams>>();
+function Dev({ navigation } : any) {
+    
     const [modalState, setModalState] = useState(false)
 
     return (

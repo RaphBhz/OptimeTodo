@@ -22,7 +22,7 @@ const Stack = createNativeStackNavigator();
 function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="Dev">
+			<Stack.Navigator initialRouteName="Home">
 				<Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
 				<Stack.Screen name="Dev" component={Dev} />
 				<Stack.Screen name="Locked" component={Locked} options={{headerShown: false}}/>
