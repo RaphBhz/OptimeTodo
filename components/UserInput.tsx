@@ -14,7 +14,7 @@ const UserInput = (props: Props) => {
         placeholderTextColor='#a3a3a3'
         secureTextEntry={props.secureText}
       />
-    
+      
   );
 };
 
