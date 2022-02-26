@@ -5,14 +5,16 @@ type Props = {
     title: string;
     content: string;
     date: string;
-    color?: string;
+    setVisibility: (isVisible: boolean) => void;
 }
 
-const cards = (props: Props) => {
-    var color = props.color ? props.color : '#fff'
-
+const NotePreview = (props: Props) => {
     return (
-        <View style={[styles.container, {backgroundColor: color}]}>
+        <Pressable style={({pressed}) => [
+            styles.container,
+            {backgroundColor: pressed ? 'rgba(200, 200, 200, 0.2)' : 'rgba(255, 255, 255, 1)'}]}
+            onPress={() => {props.setVisibility(true)}}
+        >
             <View style={styles.header}>
                 <Text style={styles.headerText}>{props.title}</Text>
                 <Text style={styles.headerText}>{props.date}</Text>
@@ -21,16 +23,15 @@ const cards = (props: Props) => {
                 {/* todo cut le content en 60 char */}
                 {props.content}
             </Text>
-        </View>
+        </Pressable>
     )
 }
 
-export default cards
+export default NotePreview
 
 const styles = StyleSheet.create({
     container:{
         borderRadius: 15,
-        width: '100%',
         padding: 20,
         marginBottom: 10
     },

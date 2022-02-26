@@ -1,8 +1,9 @@
-import { StyleSheet, TextInput, View} from "react-native";
-import React, {useState} from "react";
+import { StyleSheet, TextInput} from "react-native";
+import React from "react";
 
 type Props = {
   title: string;
+  onChangeEvent: (newText: string) => void
   secureText?: boolean;
 };
 
@@ -13,6 +14,7 @@ const UserInput = (props: Props) => {
         placeholder={props.title}
         placeholderTextColor='#a3a3a3'
         secureTextEntry={props.secureText}
+        onChangeText={newText => props.onChangeEvent(newText)}
       />
     
   );

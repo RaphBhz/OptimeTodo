@@ -3,8 +3,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Locked from "./components/pages/Locked";
 import Dev from "./components/pages/Dev";
-import AndroidFonts from "./components/react-native-fonts-master/AndroidFonts";
-import IosFonts from "./components/react-native-fonts-master/IosFonts";
 
 import Home from './components/pages/Home'
 import AppLoading from './components/pages/AppLoading'
@@ -14,8 +12,6 @@ import { useFonts, RobotoMono_400Regular, RobotoMono_700Bold } from "@expo-googl
 export type RootStackParams = {
 	Dev: undefined;
 	Locked: undefined;
-	Ios: undefined;
-	Android: undefined;
 	Home: undefined;
 };
 
@@ -38,8 +34,6 @@ function App() {
 					<Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
 					<Stack.Screen name="Dev" component={Dev} />
 					<Stack.Screen name="Locked" component={Locked} options={{headerShown: false}}/>
-					<Stack.Screen name="Ios" component={IosFonts} />
-					<Stack.Screen name="Android" component={AndroidFonts} />
 				</Stack.Navigator>
 			</NavigationContainer>
 		);

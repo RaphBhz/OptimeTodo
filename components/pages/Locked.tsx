@@ -1,5 +1,5 @@
 import React, {useState}from 'react';
-import { Image, View, Text, StyleSheet, Button, Modal, Pressable, TextInput} from 'react-native';
+import { Image, Text, StyleSheet, Button, Alert} from 'react-native';
 import Container from '../Container';
 import ModalUI from '../ModalUI';
 import SubmitButton from '../SubmitButton';
@@ -10,22 +10,45 @@ type Props = {};
 const Locked = (props: Props) =>{
   const [loginModalOpen, setLoginModalState] = useState(false);
   const [RegisterModalOpen, setRegisterModalState] = useState(false);
-
+  
+  // todo: voir comment clear le buffer si la modale est fermé
+  const [loginUsernameState, setLoginUsernameState] = useState('');
+  const [loginPasswordState, setloginPasswordState] = useState('');
+  const [RegisterUsernameState, setRegisterUsernameState] = useState('');
+  const [RegisterPasswordState, setRegisterPasswordState] = useState('');
+  const [RegisterConfirmPasswordState, setRegisterConfirmPasswordState] = useState('');
 
   return(
     <Container customStyle={{ justifyContent: 'center' }}>
 
-      <ModalUI title='Login' setVisibility={setLoginModalState} visible={loginModalOpen}>
-        <UserInput title="Username"/>
-        <UserInput title="Password" secureText={true}/>
-        <SubmitButton title='Login' event={() => setLoginModalState(false)}/>
+      <ModalUI 
+        title='Login' 
+        setVisibility={setLoginModalState} 
+        visible={loginModalOpen}
+        customStyle={{maxHeight: '100%'}}
+      >
+        <UserInput title="Username" onChangeEvent={setLoginUsernameState}/>
+        <UserInput title="Password" secureText={true} onChangeEvent={setloginPasswordState}/>
+        <SubmitButton title='Login' event={() => Alert.alert(
+          "username : " + loginUsernameState + "\n" +
+          "password : " + loginPasswordState
+          )}/>
       </ModalUI>
       
-      <ModalUI title='Register' setVisibility={setRegisterModalState} visible={RegisterModalOpen}>
-        <UserInput title="Username"/>
-        <UserInput title="Password" secureText={true}/>
-        <UserInput title="Confirm password" secureText={true}/>
-        <SubmitButton title='Login' event={() => setRegisterModalState(false)}/>
+      <ModalUI 
+        title='Register' 
+        setVisibility={setRegisterModalState} 
+        visible={RegisterModalOpen} 
+        customStyle={{maxHeight: '100%'}}
+      >
+        <UserInput title="Username" onChangeEvent={setRegisterUsernameState}/>
+        <UserInput title="Password" secureText={true} onChangeEvent={setRegisterPasswordState}/>
+        <UserInput title="Confirm password" secureText={true} onChangeEvent={setRegisterConfirmPasswordState}/>
+        <SubmitButton title='Login' event={() => Alert.alert(
+          "username : " + RegisterUsernameState + "\n" +
+          "password : " + RegisterPasswordState + "\n" +
+          "confirmPassword" + RegisterConfirmPasswordState
+          )}/>
       </ModalUI>
 
       <Image

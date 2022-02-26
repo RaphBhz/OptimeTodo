@@ -1,5 +1,5 @@
-import { StyleSheet, Pressable, Button, Text, StyleProp, ViewStyle} from 'react-native'
-import React, {useState} from 'react'
+import { StyleSheet, Pressable, Text, StyleProp, ViewStyle} from 'react-native'
+import React from 'react'
  
 type Props = {
     title: string;
