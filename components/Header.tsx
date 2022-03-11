@@ -3,6 +3,7 @@ import React from 'react'
 
 type Props = {
     title: string;
+    icon: string;
     event: () => void;
 }
 
@@ -10,7 +11,9 @@ const Header = (props: Props) => {
   return (
     <View style={styles.header}>
         <Text style={styles.title}>{props.title}</Text>
-        <Pressable style={styles.button} onPress={props.event}></Pressable>
+        <Pressable style={styles.button} onPress={props.event}>
+            <Text style={styles.icon}>{props.icon}</Text>    
+        </Pressable>
     </View>
   )
 }
@@ -47,5 +50,12 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 25,
         backgroundColor: '#F4F2E8',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    icon: {
+        fontSize: 28
     }
 })

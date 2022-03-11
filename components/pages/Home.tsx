@@ -45,7 +45,7 @@ const Home = ({ navigation }: any, props: Props) => {
                 setVisibility={setNoteFullShortState}
             />
 
-            <Header title="Your notes" event={() => {}} />
+            <Header title="Your notes" event={() => {}} icon="🏠" />
 
             <ScrollView style={styles.container}>
                 <View style={styles.emptySpace}/>
