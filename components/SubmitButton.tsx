@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     title:{
         textAlign: 'center',
         color: '#F4F2E8',
-        fontSize: 25
+        fontSize: 22,
+        fontFamily: 'RobotoMono_400Regular'
     }                   
 })       
