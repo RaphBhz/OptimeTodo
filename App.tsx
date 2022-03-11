@@ -6,7 +6,7 @@ import Dev from "./components/pages/Dev";
 
 import Home from './components/pages/Home'
 import AppLoading from './components/pages/AppLoading'
-import { useFonts, RobotoMono_400Regular, RobotoMono_700Bold } from "@expo-google-fonts/roboto-mono";
+import { useFonts, RobotoMono_400Regular, RobotoMono_400Regular_Italic, RobotoMono_700Bold } from "@expo-google-fonts/roboto-mono";
 
 //see dev.tsx pour la navigation typescript
 export type RootStackParams = {
@@ -21,7 +21,8 @@ function App() {
 
 	let [fontsLoaded] = useFonts({
 		RobotoMono_400Regular,
-		RobotoMono_700Bold
+		RobotoMono_400Regular_Italic,
+		RobotoMono_700Bold,
 	});
 
 	if (!fontsLoaded) {
@@ -29,6 +30,7 @@ function App() {
 	} else {
 
 		return (
+
 			<NavigationContainer>
 				<Stack.Navigator initialRouteName="Home">
 					<Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>

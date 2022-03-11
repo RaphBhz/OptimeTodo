@@ -30,13 +30,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#FBCA6B',
         borderRadius: 15,
         shadowColor: '#666666',
-        shadowRadius: 20,
-        shadowOpacity: 1,
+        shadowRadius: 30,
+        shadowOpacity: 0.08,
         shadowOffset: {
-            height: 10,
-            width: 10
-        },
-        textShadowRadius: 20
+            height: 6,
+            width: 0
+        }
     },
     title: {
         fontFamily: 'RobotoMono_400Regular',

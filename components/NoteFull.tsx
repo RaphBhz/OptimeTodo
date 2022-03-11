@@ -43,17 +43,19 @@ export default NoteFull
 
 const styles = StyleSheet.create({
     contentText: {
-        marginVertical: 15,
+        marginVertical: 5,
         width: '100%',
-        textAlign: 'left',
         fontStyle: 'normal',
         fontWeight: '200',
         color: '#202020',
         fontSize: 17,
+        textAlign: 'justify'
     },
     contentView:{
-        width: '120%',
-        padding: 20
+        width: '100%',
+        marginTop: 15,
+        marginBottom: 15,
+        paddingRight: 10
     },
     footer: {
         width: '100%',

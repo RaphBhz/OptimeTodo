@@ -17,7 +17,7 @@ const NotePreview = (props: Props) => {
         >
             <View style={styles.header}>
                 <Text style={styles.headerText}>{props.title}</Text>
-                <Text style={styles.headerText}>{props.date}</Text>
+                <Text style={styles.headerDate}>{props.date}</Text>
             </View>
             <Text style={styles.content}>
                 {/* todo cut le content en 60 char */}
@@ -42,9 +42,16 @@ const styles = StyleSheet.create({
     },
     headerText:{
         fontStyle: 'normal',
-        fontWeight: '200',
+        fontFamily: 'RobotoMono_400Regular',
         color: '#202020',
-        fontSize: 20,    
+        fontSize: 18,    
+    },
+    headerDate:{
+        fontStyle: 'normal',
+        fontFamily: 'RobotoMono_400Regular_Italic',
+        letterSpacing: -1,
+        color: '#909090',
+        fontSize: 12,    
     },
     content:{
         fontStyle: 'normal',
