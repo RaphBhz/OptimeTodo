@@ -32,7 +32,7 @@ const NoteFull = (props: Props) => {
                     ]}
                     onPress={() => {}}
                 >
-                    <Text style={{fontSize: 20}}>🗑</Text>
+                    <Text style={{fontSize: 20, color: 'red'}}>🗑</Text>
                 </Pressable>
             </View>
         </ModalUI>
@@ -70,8 +70,10 @@ const styles = StyleSheet.create({
         fontSize: 15,
     },
     delete: {
-        padding: 10,
-        margin: 3,
+        alignItems: 'center',
+        justifyContent: 'center',
         borderRadius: 100,
+        height: 40,
+        width: 40
     }
 })

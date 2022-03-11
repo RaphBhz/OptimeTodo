@@ -6,6 +6,7 @@ import SubmitButton from '../SubmitButton'
 import NotePreview from '../NotePreview'
 import ModalUI from '../ModalUI'
 import NoteFull from '../NoteFull'
+import CreateNote from '../CreateNote'
 
 type Props = {}
 
@@ -14,6 +15,8 @@ const Home = ({ navigation }: any, props: Props) => {
     {/* dynamiquement */}
     const [noteFullLongState, setNoteFullLongState] = useState(false);
     const [noteFullShortState, setNoteFullShortState] = useState(false);
+    const [writeNoteState, setWriteNoteState] = useState(false);
+    const [noteContent, setNoteContent] = useState('');
 
 
     return (
@@ -43,6 +46,11 @@ const Home = ({ navigation }: any, props: Props) => {
                 date='20/12/1972' 
                 visible={noteFullShortState} 
                 setVisibility={setNoteFullShortState}
+            />
+            <CreateNote
+                visible = {writeNoteState}
+                setVisibility = {setWriteNoteState}
+                onChangeEvent = {setNoteContent}
             />
 
             <Header title="Your notes" event={() => {}} icon="⚙️" />
@@ -113,7 +121,7 @@ const Home = ({ navigation }: any, props: Props) => {
             <SubmitButton 
                 title='📃 Write a note'
                 customStyle={styles.addNoteButton}
-                event={ () => {}}
+                event={() => setWriteNoteState(true)}
             />
         </Container>
     )
